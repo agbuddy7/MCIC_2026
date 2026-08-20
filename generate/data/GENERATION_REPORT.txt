@@ -1,0 +1,17 @@
+Total transcripts generated: 400
+- Flagship 1 (prompt injection): 100
+- Flagship 2 (trust poisoning): 100
+- Flagship 3 (recommendation bias): 100
+- Legitimate baselines: 100
+
+Sample transcript IDs: inj-1000, poison-1000, bias-1000, legit-1000
+Schema version: 1.0 (see schemas.json)
+Merchant pages: 16
+Attacker personas: 8
+Legitimate templates: 10
+
+Known limitations:
+- Current JSONL files are produced by harden_datasets.py (deterministic templates).
+- Live LLM generators remain available and fall back to mocks if API keys are missing.
+- Personas and merchant pages are fixture-based, not fully LLM-generated.
+- Future iterations: add voice/deepfake data and KYC forgery data.

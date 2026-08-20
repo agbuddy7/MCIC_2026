@@ -337,8 +337,9 @@ class RecommendationBiasGenerator(BasePaymentAgent):
     def generate_dataset(self, count=100):
         """Generate dataset and write to JSONL."""
         print(f"Generating {count} Flagship 3 (Recommendation Bias) transcripts...")
-        os.makedirs("generate/data", exist_ok=True)
-        out_path = "generate/data/flagship3_bias.jsonl"
+        data_dir = os.path.join(os.path.dirname(__file__), "data")
+        os.makedirs(data_dir, exist_ok=True)
+        out_path = os.path.join(data_dir, "flagship3_bias.jsonl")
         
         with open(out_path, "w", encoding="utf-8") as f:
             for idx in range(count):

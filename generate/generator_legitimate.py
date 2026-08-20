@@ -19,13 +19,11 @@ class LegitimateGenerator(BasePaymentAgent):
         """Generates a high-fidelity mock representation of a legitimate transaction."""
         tid = template["template_id"]
         
-        # Pick payee details
-        if tid == "rent_payment":
-            payee_id = "landlord-rent-capital"
-        elif tid == "family_help":
-            payee_id = "sister-travel-direct"
-        else:
-            payee_id = "utility-clearing-node"
+        payee_id = template.get("payee_id") or {
+            "rent_payment": "landlord-rent-capital",
+            "family_help": "sister-travel-direct",
+            "utility_bill": "utility-clearing-node",
+        }.get(tid, "utility-clearing-node")
             
         dialogue = template["dialogue_flow"]
         
@@ -90,7 +88,9 @@ class LegitimateGenerator(BasePaymentAgent):
     def generate_single(self, index):
         """Generates one legitimate transcript."""
         template = random.choice(self.templates)
-        amount = round(random.uniform(25.0, 350.00), 2)
+        low = float(template.get("amount_low", 25.0))
+        high = float(template.get("amount_high", 350.0))
+        amount = round(random.uniform(low, high), 2)
         
         # Currently, legitimate uses mock simulation as it is highly structured
         turns, transfer_info = self.run_mock_simulation(template, amount)

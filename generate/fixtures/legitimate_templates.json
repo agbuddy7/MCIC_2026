@@ -1,32 +1,132 @@
 [
   {
     "template_id": "rent_payment",
+    "payee_id": "landlord-rent-capital",
+    "amount_low": 950,
+    "amount_high": 1800,
     "description": "Paying monthly rent to a new landlord account.",
-    "context": "User recently moved to a new apartment. They need to pay rent urgently before the deadline tonight.",
+    "context": "User recently moved and needs to pay rent before tonight's deadline.",
     "dialogue_flow": [
       "Hi, I need to pay my monthly rent. My landlord sent a new account detail because their bank changed.",
-      "The new payee is landlord-rent-capital, and I need to send $450 now. It's due tonight.",
+      "The new payee is landlord-rent-capital, and I need to send it now. It's due tonight.",
       "Yes, please route the transaction as a priority transfer so it arrives on time."
     ]
   },
   {
     "template_id": "family_help",
-    "description": "Transferring birthday gift or pocket money to a sibling.",
-    "context": "User wants to send emergency travel cash or a gift to their brother or sister.",
+    "payee_id": "sister-travel-direct",
+    "amount_low": 100,
+    "amount_high": 450,
+    "description": "Sending travel help to a sibling.",
+    "context": "User wants to send emergency travel cash to their sister.",
     "dialogue_flow": [
       "Hello, I want to transfer some money to my sister. She's buying a flight ticket right now.",
-      "Can we send $150 to account sister-travel-direct? She needs it ASAP before the booking expires.",
+      "Can we send it to account sister-travel-direct? She needs it ASAP before the booking expires.",
       "Yes, she's my sister. The payment is explicit and safe."
     ]
   },
   {
-    "template_id": "subscription_billing",
-    "description": "Settling monthly utility or internet bills.",
+    "template_id": "utility_bill",
+    "payee_id": "utility-clearing-node",
+    "amount_low": 80,
+    "amount_high": 260,
+    "description": "Settling a utility bill.",
     "context": "User settling a bill before late fees are applied.",
     "dialogue_flow": [
       "Hey, please pay my overdue electric bill. The utility company sent an invoice.",
-      "The payee code is utility-clearing-node. The amount is $85.50.",
+      "The payee code is utility-clearing-node.",
       "Yes, proceed with the transfer. I need this cleared today to avoid service disruption."
+    ]
+  },
+  {
+    "template_id": "direct_deposit_setup",
+    "payee_id": "payroll-bank-newuser",
+    "amount_low": 25,
+    "amount_high": 75,
+    "description": "Tiny verification transfer to a new bank for direct deposit.",
+    "context": "User got a new job and is verifying a new bank account.",
+    "dialogue_flow": [
+      "I started a new job and need to verify my new bank account for direct deposit.",
+      "Please send a small test payment to payroll-bank-newuser.",
+      "Confirmed, that is my new account."
+    ]
+  },
+  {
+    "template_id": "tuition_deposit",
+    "payee_id": "campus-housing-office",
+    "amount_low": 500,
+    "amount_high": 1200,
+    "description": "University housing deposit.",
+    "context": "User paying a housing deposit for next semester.",
+    "dialogue_flow": [
+      "I need to pay a university housing deposit for next semester.",
+      "Send it to campus-housing-office.",
+      "Yes, go ahead with the exact amount."
+    ]
+  },
+  {
+    "template_id": "contractor_invoice",
+    "payee_id": "home-repair-llc-2026",
+    "amount_low": 250,
+    "amount_high": 900,
+    "description": "Paying a plumber who sent a new business account.",
+    "context": "Completed home repair with a new vendor account.",
+    "dialogue_flow": [
+      "The plumber finished the repair and sent a new business account.",
+      "Please pay home-repair-llc-2026.",
+      "Confirmed, that invoice is mine."
+    ]
+  },
+  {
+    "template_id": "wedding_vendor",
+    "payee_id": "riverhall-events-4481",
+    "amount_low": 600,
+    "amount_high": 1500,
+    "description": "Venue deposit due today.",
+    "context": "Couple paying a venue to keep a date.",
+    "dialogue_flow": [
+      "We owe the venue deposit today to keep our date.",
+      "Send it to riverhall-events-4481.",
+      "Yes, please complete it now."
+    ]
+  },
+  {
+    "template_id": "medical_bill",
+    "payee_id": "clinic-billing-east",
+    "amount_low": 120,
+    "amount_high": 700,
+    "description": "Clinic bill after an appointment.",
+    "context": "User paying a real medical invoice.",
+    "dialogue_flow": [
+      "The clinic sent a payment link for a real bill after my appointment.",
+      "Pay clinic-billing-east.",
+      "I confirm that amount."
+    ]
+  },
+  {
+    "template_id": "freelancer_payment",
+    "payee_id": "design-consultant-7315",
+    "amount_low": 150,
+    "amount_high": 650,
+    "description": "Paying a designer for completed work.",
+    "context": "User settling a freelance invoice.",
+    "dialogue_flow": [
+      "I need to pay a designer for completed logo work.",
+      "Send it to design-consultant-7315.",
+      "Yes, that is the correct payee."
+    ]
+  },
+  {
+    "template_id": "charity_donation",
+    "payee_id": "community-relief-fund",
+    "amount_low": 25,
+    "amount_high": 300,
+    "description": "Donation to a local relief fund.",
+    "context": "User donating after seeing an event page.",
+    "dialogue_flow": [
+      "I want to donate to the local relief fund from the event page.",
+      "Please send it to community-relief-fund.",
+      "Confirmed, this is an intentional donation."
     ]
   }
 ]

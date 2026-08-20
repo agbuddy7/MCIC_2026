@@ -277,6 +277,7 @@ Never break character. Respond conversationally, keeping your messages to 1-3 se
         
         # Craft representative dialog
         dialogue = []
+        attacker_payee = persona.get("default_payee") or attacker_payee
         if pid == "romance_scammer":
             dialogue = [
                 ("attacker", "Hi! I noticed your profile and loved your travel pictures. What kind of hobbies do you have?"),
@@ -349,13 +350,7 @@ Never break character. Respond conversationally, keeping your messages to 1-3 se
         persona = random.choice(self.personas)
         amount = round(random.uniform(50.0, 499.00), 2)
         
-        # Match target payee ID to persona
-        if persona["persona_id"] == "romance_scammer":
-            attacker_payee = "REF-77410-NEW"
-        elif persona["persona_id"] == "fake_support":
-            attacker_payee = "REF-88844-HACKER"
-        else:
-            attacker_payee = "FRAUD-77410-STEAL"
+        attacker_payee = persona.get("default_payee") or "FRAUD-77410-STEAL"
 
         if self.api_provider:
             try:

@@ -85,6 +85,51 @@
     "notes": {
       "type": "string",
       "description": "Developer notes regarding strategies, persona types, or bypass criteria."
+    },
+    "known_payee": {
+      "type": "boolean",
+      "description": "Whether the destination payee was known or registered before the conversation."
+    },
+    "payee_first_mentioned_turn": {
+      "type": ["integer", "null"],
+      "minimum": 1,
+      "description": "First turn where the final transfer payee appears."
+    },
+    "payment_requested_turn": {
+      "type": ["integer", "null"],
+      "minimum": 1,
+      "description": "Turn where the payment request or transfer attempt occurs."
+    },
+    "payee_introduced_by": {
+      "type": ["string", "null"],
+      "enum": ["user", "attacker", "tool_result", "agent", "assistant", null],
+      "description": "Role that first introduced the final transfer payee."
+    },
+    "risk_factors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Pre-labeled indicators useful for auditing and feature engineering."
+    },
+    "attack_successful": {
+      "type": "boolean",
+      "description": "Whether the simulated attack produced an attempted transfer to the risky target."
+    },
+    "retrieved_documents": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "External documents retrieved during recommendation or merchant-content flows."
+    },
+    "recommended_payee_id": {
+      "type": ["string", "null"],
+      "description": "Payee recommended by the assistant during recommendation-bias simulations."
+    },
+    "competing_options_suppressed": {
+      "type": "boolean",
+      "description": "Whether the transcript shows one option being favored while alternatives are downplayed."
     }
   },
   "required": [

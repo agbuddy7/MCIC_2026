@@ -1,0 +1,88 @@
+{
+  "model": "RandomForestClassifier",
+  "threshold": 0.5,
+  "test_size": 80,
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1": 1.0,
+  "auc": 1.0,
+  "confusion_matrix": {
+    "true_negative": 20,
+    "false_positive": 0,
+    "false_negative": 0,
+    "true_positive": 60
+  },
+  "feature_columns": [
+    "turn_count",
+    "amount",
+    "source_of_instruction_external",
+    "source_of_instruction_user_explicit",
+    "known_payee",
+    "payee_introduced_by_user",
+    "payee_introduced_by_attacker",
+    "payee_introduced_by_tool_result",
+    "payee_lag_turns",
+    "urgency_word_count",
+    "trust_word_count",
+    "authority_word_count",
+    "romance_word_count",
+    "external_instruction_count",
+    "recommendation_steering_count",
+    "has_new_payee",
+    "has_urgent_payment",
+    "competing_options_suppressed",
+    "contains_family_language",
+    "contains_financial_jargon",
+    "payee_reused_from_earlier"
+  ],
+  "top_features": [
+    {
+      "feature": "trust_word_count",
+      "importance": 0.4420965909957886
+    },
+    {
+      "feature": "payee_introduced_by_user",
+      "importance": 0.2887732982635498
+    },
+    {
+      "feature": "turn_count",
+      "importance": 0.2690908908843994
+    },
+    {
+      "feature": "amount",
+      "importance": 3.92891452065669e-05
+    },
+    {
+      "feature": "source_of_instruction_external",
+      "importance": 0.0
+    },
+    {
+      "feature": "source_of_instruction_user_explicit",
+      "importance": 0.0
+    },
+    {
+      "feature": "known_payee",
+      "importance": 0.0
+    },
+    {
+      "feature": "payee_introduced_by_attacker",
+      "importance": 0.0
+    },
+    {
+      "feature": "payee_introduced_by_tool_result",
+      "importance": 0.0
+    },
+    {
+      "feature": "payee_lag_turns",
+      "importance": 0.0
+    },
+    {
+      "feature": "urgency_word_count",
+      "importance": 0.0
+    },
+    {
+      "feature": "authority_word_count",
+      "importance": 0.0
+    }
+  ]
+}

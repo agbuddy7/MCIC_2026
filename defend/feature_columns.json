@@ -1,0 +1,23 @@
+[
+  "turn_count",
+  "amount",
+  "source_of_instruction_external",
+  "source_of_instruction_user_explicit",
+  "known_payee",
+  "payee_introduced_by_user",
+  "payee_introduced_by_attacker",
+  "payee_introduced_by_tool_result",
+  "payee_lag_turns",
+  "urgency_word_count",
+  "trust_word_count",
+  "authority_word_count",
+  "romance_word_count",
+  "external_instruction_count",
+  "recommendation_steering_count",
+  "has_new_payee",
+  "has_urgent_payment",
+  "competing_options_suppressed",
+  "contains_family_language",
+  "contains_financial_jargon",
+  "payee_reused_from_earlier"
+]

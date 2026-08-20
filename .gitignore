@@ -9,5 +9,3 @@ __pycache__/
 venv/
 .venv/
 
-# Local data files
-generate/data/
