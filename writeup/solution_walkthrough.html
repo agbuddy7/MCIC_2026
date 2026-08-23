@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>MCIC Solution Walkthrough</title>
+  <style>
+    body { margin: 0; font-family: Georgia, serif; background: #111; color: #f4efe6; }
+    .slide { min-height: 100vh; padding: 8vh 10vw; border-bottom: 1px solid #3a342b; }
+    .kicker { color: #e0b15b; letter-spacing: .14em; text-transform: uppercase; font-size: 13px; }
+    h1 { font-size: 48px; margin: 12px 0; }
+    h2 { font-size: 32px; }
+    table { border-collapse: collapse; width: min(720px, 100%); }
+    td, th { border: 1px solid #5a4f40; padding: 8px 10px; text-align: left; }
+    @media print { .slide { page-break-after: always; min-height: auto; } }
+  </style>
+</head>
+<body>
+  <section class="slide"><p class="kicker">Mastercard Innovation Challenge 2026</p><h1>Agentic Fraud: Closed-loop detection and defense</h1><p>Generate attacks. Gate the obvious. Score the rest. Demo the loop.</p></section>
+  <section class="slide"><h2>The problem</h2><p>Agentic payment assistants will read merchant pages, chat history, and review blogs, then call transfer_funds. GenAI makes injection, trust-building, and recommendation steering cheap to scale.</p></section>
+  <section class="slide"><h2>Identify</h2><p>Eleven attack types documented in identify/attack_taxonomy.md. Three flagships are fully simulated; eight more provide breadth and real-world grounding.</p></section>
+  <section class="slide"><h2>Flagship 1: Prompt injection</h2><p>Merchant tool results hide a settlement override. The agent routes funds to an attacker payee and should mark source_of_instruction as external_content.</p></section>
+  <section class="slide"><h2>Flagship 2: Trust poisoning</h2><p>Multi-turn rapport, planted payee, manufactured urgency. The final transfer can still look user_explicit, which is why rules alone are not enough.</p></section>
+  <section class="slide"><h2>Deterministic gate</h2><p>Policy on provenance and amount: external content, unknown payees, $50 step-up, $500 hard cap, $1000 daily cap, tool-result and attacker-introduced destinations.</p></section>
+  <section class="slide"><h2>ML detector</h2><p>XGBoost on linguistic and trajectory features. Reports precision, recall, F1, and AUC on a stratified holdout split.</p></section>
+  <section class="slide"><h2>The closing loop</h2><p>Person A JSONL trains Person B. Person C's lab replays any transcript through both layers. Misses inform the next generator pass.</p></section>
+  <section class="slide"><h2>Gate vs detector</h2><table><tr><th>Layer</th><th>Role</th></tr><tr><td>Gate</td><td>High-confidence provenance and amount policy</td></tr><tr><td>Detector</td><td>Behavioral fraud that still looks like a user request</td></tr><tr><td>Combined</td><td>Block or step-up if either layer fires</td></tr></table></section>
+  <section class="slide"><h2>Feasibility</h2><p>Rules are auditable. The model is a small tabular ensemble. Main production gap is taint-tracking payee introduction without a labeled attacker role.</p></section>
+  <section class="slide"><h2>Novelty</h2><p>Neither deterministic nor stochastic defense is sufficient. The product is the complementary stack plus an empirical catch table.</p></section>
+  <section class="slide"><h2>Next</h2><p>Voice-clone and KYC fidelity metrics, live retrain from missed cases, and deployment of the lab UI next to Agent Pay traces.</p></section>
+</body>
+</html>

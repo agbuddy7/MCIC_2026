@@ -85,3 +85,21 @@ This document catalogs emerging payment fraud attack vectors enabled or amplifie
 *   **Technique:** Simulating complex transaction timing, amount variations, and merchant codes to make illicit money laundering look like normal consumer behavior.
 *   **Target:** Bank compliance systems (Anti-Money Laundering - AML).
 *   **Real-world Feasibility:** Medium. AI models learn the detection thresholds of AML models and construct payment flows that bypass them.
+
+---
+
+## Novelty and real-world feasibility
+
+### Why these attacks matter
+1. **Agentic scale**: as payment agents gain transfer authority, injection and steering attacks become scalable.
+2. **Personalization**: GenAI makes phishing and trust-building content cheaper to tailor.
+3. **Velocity**: attackers can generate, test, and iterate faster than purely human review cycles.
+
+### Feasibility in live payments
+- **Injection attacks**: feasible today if agents read untrusted tool results or merchant pages.
+- **Trust poisoning**: already common in consumer-to-consumer payment social engineering.
+- **Voice clones / KYC forgery / quishing**: documented in the wild; out of scope for this simulation but in the taxonomy for breadth.
+
+### What this repo simulates vs documents
+- **Fully simulated**: prompt injection, multi-turn trust poisoning, recommendation bias, plus a legitimate baseline.
+- **Documented only**: WhatsApp impersonation, deepfakes, KYC spoofing, romance-adjacent long-horizon fraud, multimodal phishing, synthetic documents, quishing, mule-account graph evasion.
